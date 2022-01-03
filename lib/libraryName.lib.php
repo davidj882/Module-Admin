@@ -5,17 +5,18 @@
  */
 class libraryName
 {
-    private $tbl;
-    public $label_module;
+	private $tbl;
+	public $label_module;
 
-    /**
-     * Constructor
-     * @param int $userId
-     */
-    function __construct()
-    {
-        $this->tbl          = get_module_main_tbl(array('MODULE_TABLE'));
-        $this->userId       = claro_get_current_user_id();
-        $this->label_module = "MODULE_CODE";
-    }
+	/**
+	 * Constructor
+	 * @param int $userId
+	 */
+	function __construct()
+	{
+		$tablesModule       = ['MODULE_TABLE'];
+		$this->tbl          = get_module_main_tbl($tablesModule);
+		$this->userId       = claro_get_current_user_id();
+		$this->label_module = "MODULE_CODE";
+	}
 }
